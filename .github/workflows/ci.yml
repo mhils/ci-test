@@ -9,4 +9,6 @@ jobs:
     if: github.repository == 'mhils/ci-test'
     runs-on: self-hosted
     steps:
-      - run: touch ~/test
+      - run: sleep 300
+        env:
+          super_secret: ${{ secrets.TEST_SECRET }}
