@@ -7,8 +7,6 @@ permissions:
 
 jobs:
   build:
-    if: github.repository == 'mhils/ci-test'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "::add-path::$pythonRoot"
-      - run: echo $PATH
+      - run: echo foo
