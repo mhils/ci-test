@@ -7,8 +7,9 @@ permissions:
 jobs:
   build:
     if: github.repository == 'mhils/ci-test'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - run: sleep 300
-        env:
-          super_secret: ${{ secrets.TEST_SECRET }}
+      - run: echo "::set-env name=TESTVAR::1"
+      - run: echo "::add-path::$pythonRoot"
+      - run: echo $PATH
+      - run: echo $TESTVAR
